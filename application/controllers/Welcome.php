@@ -20,8 +20,43 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+        $this->load->helper('url');
+        $this->load->helper('form');
         $this->load->view('templates/headerWIP');
 		$this->load->view('welcome_message');
+        
+       // $this->load->helper(array('form', 'url'));
+        $this->load->library('email');
+
+        $this->email->from('your@example.com', 'Your Name');
+        $this->email->to('someone@example.com'); 
+        $this->email->cc('another@another-example.com'); 
+        $this->email->bcc('them@their-example.com'); 
+
+        $this->email->subject('Email Test');
+        $this->email->message('Testing the email class.');	
+
+        $this->email->send();
+
+        //echo $this->email->print_debugger();
+
+		$this->load->library('form_validation');
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('company', 'Company', 'required');
+        $this->form_validation->set_rules('subject', 'Subject', 'required');
+        $this->form_validation->set_rules('myMessage', 'Message', 'required');
+
+
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('forms/quick-form');
+		}
+		else
+		{
+			$this->load->view('forms/quick-success');
+		}
+
         $this->load->view('templates/footerWIP');
 	}
 }

@@ -7,12 +7,32 @@ body, html {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;*/
-    background: -webkit-linear-gradient(#d9d9d8, #81817F); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#d9d9d8, #81817F); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#d9d9d8, #81817F); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#d9d9d8, #81817F); /* Standard syntax */
-    height:100%;
-    width:100%;
+    background: -webkit-linear-gradient(#e5e5e5, #81817F); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#e5e5e5, #81817F); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#e5e5e5, #81817F); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#e5e5e5, #81817F); /* Standard syntax */
+    background-attachment: fixed;
+}
+
+#body {
+    max-width:940px;
+    //outline:2px solid red;
+    margin:0 auto;
+}
+
+banner {
+    //height:40px;
+    display:block;
+    padding-top:60px;
+    height:100px;
+}
+
+.blurb1, .blurb2 {
+    height:50px;
+}
+
+div#body {
+    padding-top:15px;
 }
 
 h1.heading, p{
@@ -23,27 +43,57 @@ h1.heading, p{
 h1.heading {
     font-weight:bolder;
     font-size:36px;
-    padding-top:60px;
-    color:#f0e600;
+    color:#FFB70C;
+    margin-top:0;
     letter-spacing:15px;
+}
+
+label {
+    color:#727272;
+    width:25%;
+}
+
+input {
+    width:75%;
+    background-color:rgba(255,255,255,.5);
+}
+
+input.mySubmit {
+    width:25%;
+    float:right;
+}
+
+textarea {
+    width:100%;
+    height:8em;
+    resize:none;
+    background-color:rgba(255,255,255,.5);
 }
 
 p {
     font-weight:normal;
     font-size:24px;
-    color:#f6f066;
+    color:#727272;
+}
+
+span.typed-cursor {
+    display:none;
 }
 
 ul.nav {
-    //background-color:rgba(130,240,255, .85);
+    background-color:rgba(229,229,229,.5);
 }
 
 ul.nav li a {
-    color:#f6f066;
+    color:#727272;
 }
 
 .nav-pills li.active a {
     background-color:#f0e600;
+}
+
+.nav-pills li.active a:hover {
+    background-color:#FFB70C;
 }
 
 #container {
@@ -52,9 +102,27 @@ ul.nav li a {
     padding-bottom:3em;
 }
 
+.container-fluid {
+    padding-left:30px;
+    padding-right:30px;
+}
+
 form.contactMe {
     //background-color:palegreen;
-    margin-top:40px;
+    margin-top:15px;
+    width:350px;
+    display:inline-block;
+    float:left;
+}
+
+.validationErrors {
+    //outline:2px solid red;
+    display:inline-block;
+    padding-left:2em;
+}
+
+.validationErrors p {
+    color:#f0e600;
 }
 
 .column {
@@ -63,7 +131,7 @@ form.contactMe {
 }
 
 #footer {
-    //background-color:darkorange;
+    background-color:rgba(129,129,127, .5);
     overflow:hidden;
     position:fixed;
     bottom:0;
@@ -87,7 +155,7 @@ ul.footer li {
 }
 
 ul.footer li a, ul.footer li {
-    color:#f6f066;
+    color:#f0e600;
 }
 
 

@@ -8,6 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 	<title>Mandy Foster  DESIGN | DEVELOP | DEPLOY</title>
+    
+    <link rel="icon" href="<?=base_url()?>favicon.ico">
 
 	<!--<style type="text/css">
 
@@ -82,12 +84,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
     <!-- My stylesheet -->
     <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- My Js file -->
+    <script src="/js/typed.js"></script>
+    <script src="/js/script.js"></script>
 
 </head>
 <body>
     
     <ul class="nav nav-pills navbar-fixed-top">
-      <li role="presentation" class="active"><a href="#">Home</a></li>
-      <li role="presentation"><a href="#">Profile</a></li>
-      <li role="presentation"><a href="#">Messages</a></li>
+      <li role="presentation" class="active"><a href="..">Home</a></li>
+      <li role="presentation"><a href="" title="Coming soon">About</a></li>
+      <li role="presentation"><a href="" title="Coming soon">Projects</a></li>
+      <li role="presentation"><a href="" title="Coming soon">Booking</a></li>
     </ul>
