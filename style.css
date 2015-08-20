@@ -1,0 +1,93 @@
+* {
+    margin:0;
+}
+
+body, html {
+    /*background-image:url('http://www.hdwallpaperspulse.com/wp-content/uploads/2014/04/23/foggy-forest-3.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;*/
+    background: -webkit-linear-gradient(#d9d9d8, #81817F); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#d9d9d8, #81817F); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#d9d9d8, #81817F); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#d9d9d8, #81817F); /* Standard syntax */
+    height:100%;
+    width:100%;
+}
+
+h1.heading, p{
+	/* Using the custom font we've included in the HTML tab: */
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+h1.heading {
+    font-weight:bolder;
+    font-size:36px;
+    padding-top:60px;
+    color:#f0e600;
+    letter-spacing:15px;
+}
+
+p {
+    font-weight:normal;
+    font-size:24px;
+    color:#f6f066;
+}
+
+ul.nav {
+    //background-color:rgba(130,240,255, .85);
+}
+
+ul.nav li a {
+    color:#f6f066;
+}
+
+.nav-pills li.active a {
+    background-color:#f0e600;
+}
+
+#container {
+    //background-color: red;
+    padding-top:3em;
+    padding-bottom:3em;
+}
+
+form.contactMe {
+    //background-color:palegreen;
+    margin-top:40px;
+}
+
+.column {
+    //outline:2px solid blue;
+    width:100%;
+}
+
+#footer {
+    //background-color:darkorange;
+    overflow:hidden;
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
+
+ul.footer {
+    //background-color:cyan;
+    padding-left:0;
+    margin-bottom:0;
+    display:inline-block;
+    float:right;
+    overflow:hidden;
+}
+
+ul.footer li {
+    display:inline-block;
+    //outline:1px solid black;
+    float:left;
+    padding:.85em 2em .85em 2em;
+}
+
+ul.footer li a, ul.footer li {
+    color:#f6f066;
+}
+
+
