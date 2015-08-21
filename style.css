@@ -25,6 +25,7 @@ banner {
     display:block;
     padding-top:60px;
     height:100px;
+    overflow:hidden;
 }
 
 .blurb1, .blurb2 {
@@ -33,14 +34,15 @@ banner {
 
 div#body {
     padding-top:15px;
+    overflow:hidden;
 }
 
-h1.heading, p{
+h1.heading, h1.success, h1.about, p{
 	/* Using the custom font we've included in the HTML tab: */
-	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif !important;
 }
 
-h1.heading {
+h1.heading, h1.success, h1.about {
     font-weight:bolder;
     font-size:36px;
     color:#FFB70C;
@@ -58,10 +60,10 @@ input {
     background-color:rgba(255,255,255,.5);
 }
 
-input.mySubmit {
+/*input.mySubmit {
     width:25%;
     float:right;
-}
+}  MUST FIX */
 
 textarea {
     width:100%;
@@ -119,15 +121,21 @@ form.contactMe {
     //outline:2px solid red;
     display:inline-block;
     padding-left:2em;
+    margin-top:15px;
 }
 
 .validationErrors p {
     color:#f0e600;
+    font-weight:bold;
+    font-family: 'arial', sans-serif;
+    font-size:18px;
+    line-height:1.2;
 }
 
 .column {
     //outline:2px solid blue;
     width:100%;
+    overflow:hidden;
 }
 
 #footer {
