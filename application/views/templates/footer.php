@@ -3,6 +3,8 @@
 $currentYear = date("Y");
 ?>
 
+</div> <!-- end container -->
+
     <div id="footer">
         <ul class="footer">
           <li>&copy; MF ThatsRight <?=$currentYear;?></li>

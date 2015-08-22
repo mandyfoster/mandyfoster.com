@@ -1,10 +1,6 @@
 <?php
 // views/welcome_message.php
 ?>
-
-<div id="container" class="container-fluid">
-    
-    <div class="column">
         <banner><h1 class="heading"></h1></banner>
 
         <div id="body">
@@ -35,7 +31,6 @@
     <div class="g-recaptcha" data-sitekey="6Lcb-AETAAAAAOgqKrGx79oL3cV4aAXsc4-ra-_o"></div>
 
 <?php
-
     echo form_submit('submit', 'Send Message');
 
     echo form_close();
@@ -44,6 +39,3 @@
             <div class="validationErrors"><?php echo validation_errors(); ?></div>
 
         </div><!-- end #body -->
-    </div><!-- end .column.left -->
-    
-</div><!-- end #container, .container-fluid -->

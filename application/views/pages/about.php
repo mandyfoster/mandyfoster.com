@@ -2,9 +2,6 @@
 // views/pages/about.php
 ?>
 
-<div id="container" class="container-fluid">
-    
-    <div class="column">
         <banner><h1 class="about"></h1></banner>
 
         <div id="body">
@@ -15,5 +12,3 @@
                 <p>Welcome to my About page</p>
             </div><!-- end aboutPage -->
         </div>
-    </div>
-</div>

@@ -3,8 +3,7 @@
 ?>
 
 <div id="container" class="container-fluid">
-    
-    <div class="column">
+
         <banner><h1 class="heading error"></h1></banner> <!-- <p>Sorry but there was an error sending your message - <strong>we have not received it</strong>.</p> -->
 
         <div id="body">
@@ -22,6 +21,5 @@
                     "<textarea name='message'>" . set_value("message") . "</textarea>";
             ?>
         </div><!-- end #body -->
-    </div><!-- end .column.left -->
     
 </div><!-- end #container, .container-fluid -->
