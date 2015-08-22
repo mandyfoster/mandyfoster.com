@@ -79,6 +79,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
+    <!-- RECAPTCHA -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    
     <!-- Google WebFonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" />
     
@@ -95,6 +98,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <ul id="navigation" class="nav nav-pills navbar-fixed-top">
       <li role="presentation"><a href="..">Home</a></li>
       <li role="presentation"><a href="<?php echo base_url("about"); ?>" title="Coming soon">About</a></li>
-      <li role="presentation"><a href="" title="Coming soon">Projects</a></li>
-      <li role="presentation"><a href="" title="Coming soon">Booking</a></li>
+      <li role="presentation"><a class="void" href="javascript:void(0);" title="Coming soon">Projects</a></li>
+      <li role="presentation"><a class="void" href="javascript:void(0);" title="Coming soon">Booking</a></li>
     </ul>

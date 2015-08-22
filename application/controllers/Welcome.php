@@ -44,11 +44,13 @@ class Welcome extends CI_Controller {
 	public 		$data 				= 	array(); // used for the views
     
     
+    
 	public function __construct() {
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->helper('url');
 		$this->load->library('email');
+        //$this->load->library('recaptchalib'); 
 	}
     
 	public function index()
@@ -95,8 +97,9 @@ class Welcome extends CI_Controller {
         
         
         $this->subjectLine = "Contact form response from " . $_SERVER['HTTP_HOST'];
-		$this->set_validation_rules();
-		$this->set_view_captcha_data();
+		$this->set_validation_rules(); 
+        $this->form_validation->set_rules('g-recaptcha-response','Captcha','callback_recaptcha');
+ 
         
         
 		if($this->form_validation->run() == FALSE) 
@@ -117,7 +120,34 @@ class Welcome extends CI_Controller {
             
 			// if $this->headerView/footerView is set it will load their views
 		}
-	}
+	}//end index
+
+    
+    public function recaptcha($str='')
+    {
+      $google_url="https://www.google.com/recaptcha/api/siteverify";
+      $secret='6Lcb-AETAAAAANwzr5UcL2PxuM4iwV8eQbcd971V';
+      $ip=$_SERVER['REMOTE_ADDR'];
+      $url=$google_url."?secret=".$secret."&response=".$str."&remoteip=".$ip;
+      $curl = curl_init();
+      curl_setopt($curl, CURLOPT_URL, $url);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+      curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.16) Gecko/20110319 Firefox/3.6.16");
+      $res = curl_exec($curl);
+      curl_close($curl);
+      $res= json_decode($res, true);
+      //reCaptcha success check
+      if($res['success'])
+      {
+        return TRUE;
+      }
+      else
+      {
+        $this->form_validation->set_message('recaptcha', 'The reCAPTCHA field is telling me that you are a robot. Shall we give it another try?');
+        return FALSE;
+      }
+    }
     
     
 	/* HELPER FUNCTIONS */
@@ -144,23 +174,6 @@ class Welcome extends CI_Controller {
 			return $this->email->send();
 	}
     
-	// set the $this->data variables (which is sent to the view)
-	// for the question/answer for spam protection.
-	protected function set_view_captcha_data() 
-    {
-		$this->data['show_spam_protection'] = $this->spam_protection; // used in the view
-		$this->data['spam_question'] = $this->spam_question; // used in the view
-        
-		if ($this->displayEmailWhenError == TRUE)
-        {
-			$this->data['displayEmailWhenError'] = TRUE;
-			$this->data['sendEmailTo'] = $this->sendEmailTo;
-		}
-		else
-        {
-			$this->data['displayEmailWhenError'] = FALSE;
-		}
-	}
     
 	protected function set_validation_rules() 
     {
@@ -168,25 +181,11 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules('email', 'Your Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('subject', 'The Subject', 'trim|required');
 		$this->form_validation->set_rules('message', 'Message', 'trim|required|strip_tags');
-		if ($this->spam_protection) 
+		/*if ($this->spam_protection) 
         {
 			$this->form_validation->set_rules('spam_protection', 'Spam Protection', 'callback__spam_protection');
-		}
+		}*/
 	}
-    
-	// the callback for checking the spam protection. Only one question/one answer, very basic.
-	public function _spam_protection($str)
-	{
-		// we will assume the user is lazy with their caps lock
-		if (strtolower(trim($str)) == strtolower(trim($this->spam_answer)))
-        {
-			return true;
-		}
-		else 
-        {
-			$this->form_validation->set_message('_spam_protection', 'The %s field did not match the correct answer');
-			return false;
-		}
-	}
+
     
 }

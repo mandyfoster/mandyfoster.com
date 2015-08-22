@@ -11,8 +11,7 @@
             <div class="blurb1"></div><!-- end blurb1 -->
             <div class="blurb2"></div><!-- end blurb2 -->
 
-            <!--<form name="contactMe" class="contactMe" action="" method="post">-->
-<?
+<?php
 
     $contactMeAttr = array('class' => 'contactMe');
     echo form_open(current_url(),$contactMeAttr); 
@@ -26,14 +25,16 @@
     echo form_label('Subject: ', 'subject');
     echo form_input('subject', set_value('subject')) . "<br/>";
 
-    echo form_label('Message: ', 'message');
+    $messageAttr = array('class' => 'messageHide');
+    echo form_label('Message: ', 'message', $messageAttr);
     echo '<textarea name="message" placeholder="Message">' . set_value("message") . "</textarea><br/>";
 
-    if ($show_spam_protection) 
-    {
-        echo form_label('Spam protection - : ' . $spam_question, 'spam_protection') . "<br/>";
-        echo form_input('spam_protection', set_value('spam_protection')) . '<br/><br/>';
-    }
+    echo form_error('g-recaptcha-response','<div style="color:red; display:none;">','</div>');
+?>
+            
+    <div class="g-recaptcha" data-sitekey="6Lcb-AETAAAAAOgqKrGx79oL3cV4aAXsc4-ra-_o"></div>
+
+<?php
 
     echo form_submit('submit', 'Send Message');
 

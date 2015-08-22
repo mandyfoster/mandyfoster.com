@@ -55,17 +55,17 @@ $('document').ready(function(){
        $('.validationErrors').hide().delay(1100).fadeIn(1500); 
     });
     
-    $(function(){
+    /*$(function(){
        $('ul.nav li').hide().delay(1200).fadeIn(500); 
-    });
+    });*/
     
     $(function(){
        $('.aboutPage').hide().delay(1200).fadeIn(500); 
     });
     
-    $(function(){
+   /* $(function(){
        $('ul.footer li').hide().delay(1200).fadeIn(500); 
-    });
+    });*/
     
     
     var currentPage = window.location.pathname.substring(1);
@@ -91,7 +91,7 @@ $('document').ready(function(){
     
     
     
-    alert(text);
+    //alert(text);
 
     
 
