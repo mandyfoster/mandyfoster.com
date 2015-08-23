@@ -3,6 +3,7 @@
 $currentYear = date("Y");
 ?>
 
+    </div><!-- end center div -->
 </div> <!-- end container -->
 
     <div id="footer">

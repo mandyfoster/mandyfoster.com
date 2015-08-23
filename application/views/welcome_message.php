@@ -1,6 +1,7 @@
 <?php
 // views/welcome_message.php
 ?>
+
         <banner><h1 class="heading"></h1></banner>
 
         <div id="body">

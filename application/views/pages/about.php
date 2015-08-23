@@ -9,6 +9,15 @@
             <!--<div class="blurb2"></div> end blurb2 -->
             
             <div class="aboutPage">
-                <p>Welcome to my About page</p>
+                <section class="selfImg">
+                  <div id="card">
+                    <figure class="front">
+                         <img class="about" src="/images/me-sm2.jpg"/>
+                    </figure>
+                    <figure class="back">
+                        <img class="about" src="/images/me-sm1.jpg"/>
+                    </figure>
+                  </div>
+                </section>
             </div><!-- end aboutPage -->
         </div>

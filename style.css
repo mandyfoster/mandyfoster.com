@@ -3,18 +3,55 @@
 }
 
 /* background color */
-body, html {
-    background: -webkit-linear-gradient(#e5e5e5, #81817F); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#e5e5e5, #81817F); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#e5e5e5, #81817F); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#e5e5e5, #81817F); /* Standard syntax */
-    background-attachment: fixed;
+body {
+    //background: -webkit-linear-gradient(#e5e5e5, #81817F); /* For Safari 5.1 to 6.0 */
+    //background: -o-linear-gradient(#e5e5e5, #81817F); /* For Opera 11.1 to 12.0 */
+    //background: -moz-linear-gradient(#e5e5e5, #81817F); /* For Firefox 3.6 to 15 */
+    //background: linear-gradient(#e5e5e5, #81817F); /* Standard syntax */
+    //background-attachment: fixed;
     height:100%;
+    width:100%;
+    background-color:white;
+    
+  background: url(/images/coding-lg2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+html {
+    height:100%;
+    width:100%;
+}
+
+#loader {
+    background-color:#a2a2a2;
+    height:100%;
+    width:100%;
+    display:block;
+    position:absolute;
+    z-index:9999;
+    top:0;
+    left:0;
+}
+
+.hideMe {
+    display:none;
 }
 
 /* Text/Fonts */
-h1.heading, h1.success, h1.about, p{
+h1#loading, h1.heading, h1.success, h1.about, p{
 	font-family: 'Open Sans Condensed', sans-serif !important;
+}
+
+h1#loading {
+    color:white;
+    text-shadow:2px 2px 2px #161616;
+    font-size:75px;
+    margin-left:10%;
+    margin-top:5%;
+    opacity:.5;
 }
 
 h1.heading, h1.success, h1.about {
@@ -24,7 +61,7 @@ h1.heading, h1.success, h1.about {
     color:#00D2FF;
     margin-top:0;
     letter-spacing:15px;
-    text-shadow:2px 2px 2px white;
+    text-shadow:2px 2px 2px #161616;
 }
 
 p {
@@ -43,8 +80,15 @@ p {
 
 
 /* Header CSS */
-ul.nav {
+nav {
+    //outline:2px solid red;
     background-color:rgba(229,229,229,.7);
+    display:block;
+}
+
+ul.nav {
+    max-width:940px;
+    margin:0 auto;
 }
 
 ul.nav li a {
@@ -74,6 +118,12 @@ ul.nav li a.void {
     padding-right:30px;
 }
 
+#center {
+    max-width:940px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
 
 /* Footer CSS */
 #footer {
@@ -88,9 +138,10 @@ ul.footer {
     //background-color:cyan;
     padding-left:0;
     margin-bottom:0;
-    display:inline-block;
+    display:block;
     float:right;
     overflow:hidden;
+    max-width:940px;
 }
 
 ul.footer li {
@@ -180,6 +231,44 @@ banner {
     height:50px;
 }
 
+.selfImg { 
+  width: 200px;
+  height: 250px;
+  position: relative;
+  perspective: 800px;
+}
+
+#card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+#card figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#card .front {
+  background: red;
+}
+#card .back {
+  background: blue;
+  transform: rotateY( 180deg );
+}
+
+#card.flipped {
+  transform: rotateY( 180deg );
+}
+
 
 
 /*@media only screen and (max-width : 1200px){
@@ -200,7 +289,7 @@ body, html {
         font-size:18.5px;
         color:#00a8cc;
         margin-top:0;
-        letter-spacing:15px;
+        letter-spacing:5px;
         text-shadow:none;
     }
     
@@ -233,6 +322,11 @@ body, html {
         padding-right:5px;
     }
     
+     banner {
+        padding-top:20px;
+        height:50px;
+    }
+    
 }/* end width 767 */
 
 
@@ -252,7 +346,7 @@ body, html {
         font-size:16px;
         color:#00a8cc;
         margin-top:0;
-        letter-spacing:15px;
+        letter-spacing:5px;
     }
     
     .container-fluid {
@@ -279,5 +373,10 @@ body, html {
     
     form.contactMe {
         width:280px;
+    }
+    
+    banner {
+        padding-top:20px;
+        height:80px;
     }
 }/* end width 320*/
