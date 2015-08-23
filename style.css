@@ -236,6 +236,10 @@ banner {
   height: 250px;
   position: relative;
   perspective: 800px;
+    display:inline-block;
+    float:right;
+    margin-left:2em;
+    margin-bottom:2em;
 }
 
 #card {

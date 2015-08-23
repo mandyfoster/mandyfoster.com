@@ -65,8 +65,10 @@ $('document').ready(function(){
         $('#card').delay(750).toggleClass('flipped');
     });
     
-    $('#card').mouseover(function(){
-        $('#card').toggleClass('flipped');
+    $('#card').hover(function(){
+        $(this).toggleClass('flipped');
+    },function(){
+        $(this).toggleClass('flipped');
     });
     
     
