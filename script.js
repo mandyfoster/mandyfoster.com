@@ -66,9 +66,9 @@ $('document').ready(function(){
     });
     
     $('#card').hover(function(){
-        $(this).toggleClass('flipped');
+        $(this).stop().toggleClass('flipped');
     },function(){
-        $(this).toggleClass('flipped');
+        $(this).stop().toggleClass('flipped');
     });
     
     

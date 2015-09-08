@@ -170,7 +170,7 @@ class Welcome extends CI_Controller {
 			$this->email->from($this->input->post('email'), $this->input->post('name'));
 			$this->email->to($this->sendEmailTo);
 			$this->email->subject($this->subjectLine);
-			$this->email->message($this->input->post('message'));
+			$this->email->message($this->input->post('message') . '   ' . $this->input->post('needResume'));
 			return $this->email->send();
 	}
     

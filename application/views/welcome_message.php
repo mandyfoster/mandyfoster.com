@@ -24,7 +24,10 @@
 
     $messageAttr = array('class' => 'messageHide');
     echo form_label('Message: ', 'message', $messageAttr);
-    echo '<textarea name="message" placeholder="Message">' . set_value("message") . "</textarea><br/>";
+    echo '<textarea name="message" placeholder="Message">' . set_value("message") . "</textarea><br/><br/>";
+
+    echo form_label('Want my resume? ', 'needResume');
+    echo form_checkbox('needResume','INeedYourResume',false) . '<br/><br/>';
 
     echo form_error('g-recaptcha-response','<div style="color:red; display:none;">','</div>');
 ?>
@@ -32,7 +35,7 @@
     <div class="g-recaptcha" data-sitekey="6Lcb-AETAAAAAOgqKrGx79oL3cV4aAXsc4-ra-_o"></div>
 
 <?php
-    echo form_submit('submit', 'Send Message');
+    echo '<br/>' . form_submit('submit', 'Send Message') . '<br/><br/>';
 
     echo form_close();
  ?>
