@@ -1,8 +1,40 @@
 $(window).bind("load", function(){
    //alert(window.location);
   $('#loader').fadeOut(600);
+    
+
+    
+       var today = new Date();
+       var h = today.getHours();
+    
+    if (h < 10)
+    {//between 6am and 12pm = morning
+        //alert('morning');
+        $('#sky').css('background-image','url(/images/morning.png)');
+    }else if(h < 17)
+    {//between 12pm and 6pm = afternoon
+        //alert('afternoon');
+        $('#sky').css('background-image','url(/images/afternoon.png)');
+    }else if(h < 23)
+    {//between 6pm and 12am = evening
+        //alert('evening');
+        $('#sky').css('background-image','url(/images/evening.png)');
+    }else
+    {//between 12am and 6am = midnight
+        //alert('midnight');
+        $('#sky').css('background-image','url(/images/midnight.png)');
+    }
  
 
+    function animateResume(){
+        //$('.res').hide();
+        $('#my-logo').css({'width':100, 'height':100}).attr('src','images/korean-logo.svg').animate({left:500},500);
+    }//end animateResume
+    
+    
+    animateResume();
+    
+    
 $('document').ready(function(){
       $(function(){
           $(".heading").typed({
@@ -59,39 +91,97 @@ $('document').ready(function(){
     $(function(){
        $('.validationErrors').hide().delay(1100).fadeIn(1500); 
     });
-
+    
+    
+    
+    /*$('#card').hover(function(){
+        $(this).stop().animate({
+            height:"400px",
+            width:"400px"
+        });
+    },function(){
+        $(this).stop().animate({
+            height:"200px",
+            width:"200px"
+        });
+    });*/
     
     $(function(){
-        $('#card').delay(750).toggleClass('flipped');
+        var card = $('#card');
+        var cardWidth = card.width();
+        var cardHeight = card.height();
+        
+        var divBody = $('#body');
+        var divBodyWidth = divBody.width();
+        var divBodyHeight = divBody.height();
+        
+        var myLogo = $('#my-logo');
+        
+        //alert(myLogoWidth + ' ' + myLogoHeight + ' ' + divBodyWidth + ' ' + divBodyHeight);
+        
+        
+        //myLogo.animate({height:"20"},4500);        
     });
     
-    $('#card').hover(function(){
-        $(this).stop().toggleClass('flipped');
-    },function(){
-        $(this).stop().toggleClass('flipped');
-    });
     
+    
+    var isMobile = { 
+    Android: function() { return navigator.userAgent.match(/Android/i); }, 
+    BlackBerry: function() { return navigator.userAgent.match(/BlackBerry/i); }, 
+    iOS: function() { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, 
+    Opera: function() { return navigator.userAgent.match(/Opera Mini/i); }, 
+    Windows: function() { return navigator.userAgent.match(/IEMobile/i); }, 
+    any: function() { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
+    
+    /*
+    jQuery(function($) {
+        if (!isMobile.any())
+        //$('#is-mobile').toggleClass('show hide');
+            alert('not mobile');
+        if (isMobile.any())
+        //$('#is-desktop').toggleClass('show hide');
+            alert('mobile');
+    });*/
+    
+    
+
+
+
+    
+    //alert(currentTime());
+        
+        
+    
+    
+    //alert('hello');
+   // $('ul#navigation li').addClass('active');
     
     var currentPage = window.location.pathname.substring(1);
-    var lis = document.getElementById("navigation").getElementsByTagName("a");
-    //var n = lis.array().innerHTML;
-    //alert(lis[2].innerHTML);
     
-    var text = "";
+    var navList = $('ul#navigation li');
     
-    //var navList = new Array(lis);
-    var prop;
-    for(prop in lis){
-        text += lis[prop] + " ";
-    }
-    
-    /*for(i=0;i<navList.length;i++){
-        text += navList[i].innerHTML + currentPage;
+    text = '';
         
-        //if link html == currentPage
-        // take x change class
-        //else take x change class to default  
+    
+    /*if(currentPage == ''){
+       alert('home'); 
+    }else if(currentPage == 'about'){
+       alert('about'); 
+    }else{
+        alert('other');
     }*/
+    
+    
+   /* navList.each(function(li){
+        text += $(this).html();
+       //alert(text); 
+        if($(this).html() == ''){
+            alert('homepage');
+        }else{
+            alert('failure');
+        }
+    });*/
+
     
 
 });

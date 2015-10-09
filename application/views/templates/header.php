@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="robots" content="noindex,nofollow">
 	<title>Mandy Foster  DESIGN | DEVELOP | DEPLOY</title>
     
@@ -40,12 +40,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
     <div id="loader"><h1 id="loading">Loading...</h1></div>
     
+    <div id="sky">
+    </div><!-- end sky background -->
+    
     <nav class="navbar-fixed-top">
         <ul id="navigation" class="nav nav-pills">
-          <li role="presentation"><a href="..">Home</a></li>
+          <li role="presentation"><a href="<?php echo base_url(); ?>">Home</a></li>
           <li role="presentation"><a href="<?php echo base_url("about"); ?>">About</a></li>
           <li role="presentation"><a class="void" href="javascript:void(0);" title="Coming soon">Projects</a></li>
-          <li role="presentation"><a class="void" href="javascript:void(0);" title="Coming soon">Booking</a></li>
+          <li role="presentation"><a href="<?php echo base_url("contact"); ?>">Contact</a></li>
         </ul>
     </nav>
     

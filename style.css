@@ -4,20 +4,37 @@
 
 /* background color */
 body {
-    //background: -webkit-linear-gradient(#e5e5e5, #81817F); /* For Safari 5.1 to 6.0 */
-    //background: -o-linear-gradient(#e5e5e5, #81817F); /* For Opera 11.1 to 12.0 */
-    //background: -moz-linear-gradient(#e5e5e5, #81817F); /* For Firefox 3.6 to 15 */
-    //background: linear-gradient(#e5e5e5, #81817F); /* Standard syntax */
-    //background-attachment: fixed;
     height:100%;
     width:100%;
-    background-color:white;
-    
-  background: url(/images/coding-lg2.jpg) no-repeat center center fixed; 
+   // background-color:#fef5a8; /*morning*/
+    background-color:#bccfe2; /*afternoon*/
+    //background-color:#ff2242; /*evening*/
+    //background-color:#0c0419; /*midnight*/
+  //background: url(/images/morning.svg) no-repeat center center fixed; 
+  //-webkit-background-size: cover;
+ // -moz-background-size: cover;
+ // -o-background-size: cover;
+ // background-size: cover;
+}
+
+#sky {
+    //background: url(/images/morning.png) no-repeat center center fixed;
+    //background: url(/images/afternoon.png) no-repeat center center fixed;
+    //background: url(/images/evening.png) no-repeat center center fixed;
+    //background: url(/images/midnight.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+    display:block;
+    width:100%;
+    height:100%;
+    position:fixed;
+    bottom:0;
+    //top:0;
+    //left:0;
+    z-index:-99999;
+    //border:5px solid green;
 }
 
 html {
@@ -41,7 +58,7 @@ html {
 }
 
 /* Text/Fonts */
-h1#loading, h1.heading, h1.success, h1.about, p{
+h1#loading, h1.heading, h1.success, h1.about, p, li{
 	font-family: 'Open Sans Condensed', sans-serif !important;
 }
 
@@ -57,7 +74,6 @@ h1#loading {
 h1.heading, h1.success, h1.about {
     font-weight:bolder;
     font-size:36px;
-    //color:#FFB70C;
     color:#00D2FF;
     margin-top:0;
     letter-spacing:15px;
@@ -68,6 +84,10 @@ p {
     font-weight:normal;
     font-size:24px;
     color:#727272;
+}
+
+li {
+    font-size:18px;
 }
 
 .validationErrors p {
@@ -108,9 +128,6 @@ ul.nav li a.void {
 }
 
 #container {
-    //background-color: red;
-    padding-top:3em;
-    padding-bottom:3em;
 }
 
 .container-fluid {
@@ -135,7 +152,6 @@ ul.nav li a.void {
 }
 
 ul.footer {
-    //background-color:cyan;
     padding-left:0;
     margin-bottom:0;
     display:block;
@@ -152,7 +168,6 @@ ul.footer li {
 }
 
 ul.footer li a, ul.footer li {
-    //color:#f0e600;
     color:#d4d4d4;
 }
 
@@ -185,7 +200,6 @@ span.typed-cursor {
 }
 
 form.contactMe {
-    //background-color:palegreen;
     margin-top:15px;
     width:350px;
     display:inline-block;
@@ -197,7 +211,6 @@ form.contactMe {
 }
 
 .validationErrors {
-    //outline:2px solid red;
     display:inline-block;
     padding-left:2em;
     margin-top:15px;
@@ -210,12 +223,9 @@ form.contactMe {
 
 /* All */
 #body {
-    //max-width:940px;
-    //outline:2px solid red;
-    //margin:0 auto;
-    padding-top:15px;
-    padding-left:30px;
-    padding-right:30px;
+    outline:2px solid red;
+    padding-top:3em;
+    padding-bottom:3em;
     overflow:hidden;
 }
 
@@ -240,37 +250,56 @@ banner {
     float:right;
     margin-left:2em;
     margin-bottom:2em;
+}/*on about page*/
+
+
+img#my-logo { 
+  max-width: 100%;
+  max-height: 100%;
+    height:500px;
+    position: relative;
+    display:inline-block;
 }
 
 #card {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 1s;
-    border-radius:20px;
+    //width: 50%;
+    //height: 90%;
+    //display:inline-block;
+    //float:left;
     overflow:hidden;
+    outline:2px solid pink;
 }
 
-#card figure {
-  margin: 0;
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+
+#resume {
+    outline:2px solid pink;
 }
 
-#card .front {
-  background: red;
-}
-#card .back {
-  background: blue;
-  transform: rotateY( 180deg );
+.res {
+    outline:1px solid orange;
+    display:block;
+    overflow:hidden;
+    clear:both;
 }
 
-#card.flipped {
-  transform: rotateY( 180deg );
+/*.obj-info, .workplace-skills {
+    outline:2px solid cyan;
+    width:50%;
+    float:right;
+    display:inline-block;
+}*/
+
+
+
+.skill-icon {
+    width:100px;
+    display:inline-block;
+    float:left;
+}
+
+img.example {
+    display:block;
+    width:400px;
 }
 
 
@@ -337,9 +366,6 @@ body, html {
  
 @media only screen and (max-width : 480px){
 }/* end width 480 */
-
-
-
  
 @media only screen and (max-width : 320px){ /* Portrait on my phone */
      h1.heading, h1.success, h1.about, p{
